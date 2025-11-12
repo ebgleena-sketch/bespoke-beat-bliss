@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Occasions from "@/components/Occasions";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
 import OrderForm from "@/components/OrderForm";
@@ -7,6 +8,7 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
+      <Occasions />
       <HowItWorks />
       <Pricing />
       <OrderForm />
