@@ -172,7 +172,6 @@ const OrderForm = () => {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="basic">Basic Song ($25–$75)</SelectItem>
                             <SelectItem value="personal">Personal Song ($100–$250)</SelectItem>
                             <SelectItem value="premium">Premium Song ($300–$600)</SelectItem>
                             <SelectItem value="anthem">Brand/School Anthem ($600–$1200)</SelectItem>

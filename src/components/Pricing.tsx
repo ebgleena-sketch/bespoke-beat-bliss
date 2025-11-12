@@ -1,18 +1,8 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+
 const pricingTiers = [
-  {
-    name: "Basic Song",
-    priceRange: "$25–$75",
-    description: "Perfect for quick, personalized moments",
-    features: [
-      "30–60 seconds",
-      "1–2 custom details (name, theme)",
-      "AI-generated vocals",
-      "Standard quality audio",
-    ],
-  },
   {
     name: "Personal Song",
     priceRange: "$100–$250",
@@ -72,7 +62,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pricingTiers.map((tier, index) => (
             <div
               key={index}
