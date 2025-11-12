@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 5%;
 
-    --primary: 16 100% 58%;
+    --primary: 0 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 45 100% 96%;
-    --secondary-foreground: 0 0% 5%;
+    --secondary: 213 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 45 40% 94%;
+    --muted: 0 0% 96%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 330 100% 60%;
+    --accent: 213 100% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -38,12 +38,12 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Custom tokens for musical theme - VIBRANT */
-    --gradient-warm: linear-gradient(135deg, hsl(16 100% 58%) 0%, hsl(330 100% 60%) 50%, hsl(280 100% 65%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(16 100% 58% / 0.15) 0%, hsl(330 100% 60% / 0.15) 100%);
+    /* Custom tokens for musical theme - KantaCanta Brand */
+    --gradient-warm: linear-gradient(135deg, hsl(0 100% 50%) 0%, hsl(213 100% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 100% 50% / 0.1) 0%, hsl(213 100% 50% / 0.1) 100%);
     --glass-bg: hsl(0 0% 100% / 0.7);
-    --shadow-glow: 0 8px 40px hsl(330 100% 60% / 0.3);
-    --shadow-soft: 0 4px 20px hsl(16 100% 58% / 0.15);
+    --shadow-glow: 0 8px 40px hsl(213 100% 50% / 0.4);
+    --shadow-soft: 0 4px 20px hsl(0 100% 50% / 0.2);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -66,16 +66,16 @@ All colors MUST be HSL.
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 16 100% 58%;
+    --primary: 0 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 213 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 330 100% 60%;
+    --accent: 213 100% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
@@ -86,8 +86,8 @@ All colors MUST be HSL.
     --ring: 16 100% 58%;
 
     --glass-bg: hsl(0 0% 8% / 0.7);
-    --shadow-glow: 0 8px 40px hsl(330 100% 60% / 0.35);
-    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 8px 40px hsl(213 100% 50% / 0.5);
+    --shadow-soft: 0 4px 20px hsl(0 100% 50% / 0.3);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

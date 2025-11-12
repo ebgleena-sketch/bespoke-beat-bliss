@@ -1,5 +1,6 @@
 import { Music, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/kantacanta-logo.png";
 
 const Hero = () => {
   const scrollToForm = () => {
@@ -16,9 +17,12 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm border border-border shadow-soft">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-foreground">Your Moment, Your Song</span>
+          <div className="flex justify-center mb-8">
+            <img 
+              src={logo} 
+              alt="KantaCanta - Your Story. Your Song. Your Vibe." 
+              className="w-full max-w-2xl h-auto"
+            />
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
