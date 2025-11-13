@@ -21,7 +21,7 @@ const Hero = () => {
             <img 
               src={logo} 
               alt="KantaCanta - Your Story. Your Song. Your Vibe." 
-              className="w-full max-w-2xl h-auto"
+              className="w-full max-w-4xl h-auto"
             />
           </div>
 
