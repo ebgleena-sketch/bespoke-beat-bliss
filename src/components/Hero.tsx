@@ -8,11 +8,11 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-primary">
       {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-background/20 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -25,14 +25,14 @@ const Hero = () => {
             />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-secondary leading-tight">
             Create the Perfect Song for{" "}
-            <span className="bg-gradient-warm bg-clip-text text-transparent">
+            <span className="text-background font-extrabold">
               Every Special Moment
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-background/90 max-w-2xl mx-auto">
             From walk-up songs to wedding marches, birthday celebrations to brand anthems — 
             we craft personalized songs that make your moments unforgettable.
           </p>
@@ -40,7 +40,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button 
               size="lg" 
-              className="bg-gradient-warm hover:opacity-90 transition-smooth shadow-glow text-lg px-8 py-6"
+              className="bg-secondary hover:bg-secondary/90 text-white transition-smooth shadow-glow text-lg px-8 py-6"
               onClick={scrollToForm}
             >
               <Music className="w-5 h-5 mr-2" />
@@ -49,7 +49,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-8 py-6 border-2"
+              className="text-lg px-8 py-6 border-2 border-background bg-background/10 text-background hover:bg-background hover:text-primary"
               onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
             >
               View Pricing
