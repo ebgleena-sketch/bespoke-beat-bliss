@@ -78,7 +78,7 @@ const OrderForm = () => {
   const onSubmit = (data: FormValues) => {
     console.log("Form data:", data);
     console.log("Audio file:", audioFile);
-    toast.success("Order submitted! We'll contact you shortly to process payment and start creating your song.");
+    toast.success("Quote submitted! We'll contact you to discuss further within 24 hours.");
     form.reset();
     setAudioFile(null);
   };
@@ -316,10 +316,10 @@ const OrderForm = () => {
                     size="lg"
                     className="w-full bg-gradient-warm hover:opacity-90 shadow-glow text-lg py-6"
                   >
-                    Submit Order
+                    Submit for Quote
                   </Button>
                   <p className="text-sm text-muted-foreground text-center mt-4">
-                    We'll contact you to process payment and discuss final details
+                    We'll contact you to discuss further within 24 hours
                   </p>
                 </div>
               </form>
