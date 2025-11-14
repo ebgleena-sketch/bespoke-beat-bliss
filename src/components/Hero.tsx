@@ -2,6 +2,7 @@ import { Music, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/kantacanta-logo.png";
 import musicArtwork from "@/assets/music-artwork.jpg";
+import headphonesDecoration from "@/assets/headphones-decoration.png";
 const Hero = () => {
   const scrollToForm = () => {
     document.getElementById("order-form")?.scrollIntoView({
@@ -39,9 +40,28 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <img src={logo} alt="KantaCanta - Your Story. Your Song. Your Vibe." className="w-full max-w-5xl h-auto mix-blend-multiply" />
+          {/* Logo with decorative headphones */}
+          <div className="flex justify-center mb-8 relative">
+            {/* Animated decorative headphones - left */}
+            <img 
+              src={headphonesDecoration} 
+              alt="" 
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-48 lg:w-64 opacity-80 animate-pulse hover-scale z-0"
+            />
+            
+            {/* Main logo */}
+            <img 
+              src={logo} 
+              alt="KantaCanta - Your Story. Your Song. Your Vibe." 
+              className="w-full max-w-5xl h-auto mix-blend-multiply relative z-10" 
+            />
+            
+            {/* Animated decorative headphones - right */}
+            <img 
+              src={headphonesDecoration} 
+              alt="" 
+              className="absolute right-0 top-1/2 -translate-y-1/2 w-32 md:w-48 lg:w-64 opacity-80 animate-pulse hover-scale z-0 scale-x-[-1]"
+            />
           </div>
 
       {/* Music Artwork */}
