@@ -4,35 +4,50 @@ import { Button } from "@/components/ui/button";
 
 const pricingTiers = [
   {
-    name: "Personal Song",
-    priceRange: "$100–$250",
-    description: "Great for special celebrations",
+    name: "Walk-Up Song",
+    price: "$150",
+    description: "Quick, powerful entrance music",
     features: [
-      "1–2 minutes",
+      "30-60 seconds",
+      "Lyrics provided",
+      "AI-generated vocals",
+      "High quality audio",
+      "2 revisions included",
+      "$20 per additional revision"
+    ]
+  },
+  {
+    name: "Personal Songs",
+    price: "$250",
+    description: "Wedding, proposal, birthday songs",
+    features: [
+      "1-2 minutes",
       "Full custom lyrics",
       "AI-generated vocals",
-      "3–4 custom details",
-      "High-quality audio",
-      "1 revision included",
+      "3-4 custom details",
+      "High quality audio",
+      "2 revisions for free",
+      "$20 per additional revision"
     ],
-    popular: true,
+    popular: true
   },
   {
     name: "Premium Song",
-    priceRange: "$300–$600",
+    price: "$385",
     description: "For truly unforgettable moments",
     features: [
-      "2–3 minutes",
+      "2-3 minutes",
       "Full custom lyrics",
-      "Custom prompt tuning",
       "Professional mastering",
-      "Lyric video included",
-      "2 revisions included",
-    ],
+      "High quality audio",
+      "4 revisions included",
+      "$20 per additional revision",
+      "Own the rights for +$150"
+    ]
   },
   {
     name: "Brand/School Anthem",
-    priceRange: "$600–$1200",
+    price: "$600+",
     description: "Commercial-ready production",
     features: [
       "Full-length song",
@@ -40,9 +55,9 @@ const pricingTiers = [
       "Multiple format deliveries",
       "Unlimited revisions",
       "Priority support",
-      "Source files included",
-    ],
-  },
+      "Source files included"
+    ]
+  }
 ];
 
 const Pricing = () => {
@@ -62,38 +77,38 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {pricingTiers.map((tier, index) => (
             <div
               key={index}
-              className={`relative bg-card border-2 rounded-2xl p-8 shadow-soft hover:shadow-glow transition-smooth ${
-                tier.popular ? "border-primary scale-105" : "border-border"
+              className={`relative bg-background border-2 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-smooth ${
+                tier.popular ? "border-secondary scale-105" : "border-background/20"
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-warm rounded-full shadow-glow">
-                  <span className="text-sm font-semibold text-white">Most Popular</span>
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary rounded-full shadow-lg">
+                  <span className="text-sm font-semibold text-background">Most Popular</span>
                 </div>
               )}
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-card-foreground mb-2">
+                  <h3 className="text-xl font-bold text-primary mb-2">
                     {tier.name}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
+                  <p className="text-foreground/70 text-sm mb-3">
                     {tier.description}
                   </p>
-                  <div className="text-3xl font-bold bg-gradient-warm bg-clip-text text-transparent">
-                    {tier.priceRange}
+                  <div className="text-3xl font-bold text-secondary">
+                    {tier.price}
                   </div>
                 </div>
 
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-card-foreground">{feature}</span>
+                    <li key={featureIndex} className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -101,8 +116,8 @@ const Pricing = () => {
                 <Button
                   className={`w-full ${
                     tier.popular
-                      ? "bg-gradient-warm hover:opacity-90 shadow-glow"
-                      : "bg-secondary hover:bg-secondary/80"
+                      ? "bg-secondary hover:bg-secondary/90 text-background shadow-lg"
+                      : "bg-primary hover:bg-primary/90 text-background"
                   }`}
                   onClick={scrollToForm}
                 >
