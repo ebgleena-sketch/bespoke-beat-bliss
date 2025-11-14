@@ -41,7 +41,7 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto">
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <img src={logo} alt="KantaCanta - Your Story. Your Song. Your Vibe." className="w-full max-w-5xl h-auto" />
+            <img src={logo} alt="KantaCanta - Your Story. Your Song. Your Vibe." className="w-full max-w-5xl h-auto mix-blend-multiply" />
           </div>
 
       {/* Music Artwork */}
