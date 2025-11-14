@@ -46,11 +46,7 @@ const Hero = () => {
 
       {/* Music Artwork */}
       <div className="flex justify-center mb-12">
-        <img 
-          src={musicArtwork} 
-          alt="Custom music creation" 
-          className="w-full max-w-4xl h-auto rounded-2xl shadow-2xl"
-        />
+        
       </div>
         </div>
       </div>
