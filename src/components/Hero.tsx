@@ -31,7 +31,7 @@ const Hero = () => {
     description: "Commercial-ready production",
     features: ["Full-length song", "Commercial license included", "Multiple format deliveries", "Unlimited revisions", "Priority support", "Source files included"]
   }];
-  return <section className="relative bg-background py-4 overflow-hidden">
+  return <section className="relative bg-primary py-12 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse" />
