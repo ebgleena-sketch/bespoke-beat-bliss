@@ -47,7 +47,6 @@ const Hero = () => {
               src={headphonesDecoration} 
               alt="" 
               className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0"
-              style={{ filter: 'none', mixBlendMode: 'normal' }}
             />
             
             {/* Main logo */}
@@ -62,7 +61,6 @@ const Hero = () => {
               src={headphonesDecoration} 
               alt="" 
               className="absolute right-0 top-1/2 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0 scale-x-[-1]"
-              style={{ filter: 'none', mixBlendMode: 'normal' }}
             />
           </div>
 
