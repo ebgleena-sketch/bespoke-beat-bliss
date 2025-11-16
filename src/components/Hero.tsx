@@ -46,7 +46,7 @@ const Hero = () => {
             <img 
               src={headphonesDecoration} 
               alt="" 
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0"
+              className="absolute left-0 top-1/4 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0"
             />
             
             {/* Main logo */}
@@ -60,7 +60,7 @@ const Hero = () => {
             <img 
               src={headphonesDecoration} 
               alt="" 
-              className="absolute right-0 top-1/2 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0 scale-x-[-1]"
+              className="absolute right-0 top-1/4 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0 scale-x-[-1]"
             />
           </div>
 
