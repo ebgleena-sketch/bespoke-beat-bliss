@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 const pricingTiers = [
   {
     name: "Walk-Up Song",
-    price: "$150",
+    price: "$99",
+    originalPrice: "$150",
+    introductory: true,
     description: "Quick, powerful entrance music",
     features: [
       "30-60 seconds",
@@ -18,7 +20,7 @@ const pricingTiers = [
   },
   {
     name: "Personal Songs",
-    price: "$250",
+    price: "$150",
     description: "Wedding, proposal, birthday songs",
     features: [
       "1-2 minutes",
@@ -41,8 +43,7 @@ const pricingTiers = [
       "Professional mastering",
       "High quality audio",
       "4 revisions included",
-      "$20 per additional revision",
-      "Own the rights for +$150"
+      "$20 per additional revision"
     ]
   },
   {
@@ -99,9 +100,21 @@ const Pricing = () => {
                   <p className="text-foreground/70 text-sm mb-3">
                     {tier.description}
                   </p>
-                  <div className="text-3xl font-bold text-secondary">
-                    {tier.price}
+                  <div className="flex items-center gap-2">
+                    {tier.originalPrice && (
+                      <span className="text-lg text-muted-foreground line-through">
+                        {tier.originalPrice}
+                      </span>
+                    )}
+                    <span className="text-3xl font-bold text-secondary">
+                      {tier.price}
+                    </span>
                   </div>
+                  {tier.introductory && (
+                    <span className="text-xs text-secondary font-semibold">
+                      Introductory Price
+                    </span>
+                  )}
                 </div>
 
                 <ul className="space-y-2">
@@ -126,6 +139,12 @@ const Pricing = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-lg text-foreground font-semibold">
+            Extra $150 to own the rights to the song
+          </p>
         </div>
       </div>
     </section>
