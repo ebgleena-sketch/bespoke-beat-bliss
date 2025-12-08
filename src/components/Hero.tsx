@@ -1,75 +1,31 @@
-import { Music, Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import logo from "@/assets/kantacanta-logo.png";
-import musicArtwork from "@/assets/music-artwork.jpg";
-import headphonesDecoration from "@/assets/headphones-decoration.png";
+import heroBanner from "@/assets/kanta-hero-banner.png";
+
 const Hero = () => {
-  const scrollToForm = () => {
-    document.getElementById("order-form")?.scrollIntoView({
-      behavior: "smooth"
-    });
-  };
-  const pricingTiers = [{
-    name: "Walk-Up Song",
-    price: "$150",
-    description: "Quick, powerful entrance music",
-    features: ["30-60 seconds", "Lyrics provided", "AI-generated vocals", "High quality audio", "2 revisions included", "$20 per additional revision"]
-  }, {
-    name: "Personal Songs",
-    price: "$250",
-    description: "Wedding, proposal, birthday songs",
-    features: ["1-2 minutes", "Full custom lyrics", "AI-generated vocals", "3-4 custom details", "High quality audio", "2 revisions for free", "$20 per additional revision"],
-    popular: true
-  }, {
-    name: "Premium Song",
-    price: "$385",
-    description: "For truly unforgettable moments",
-    features: ["2-3 minutes", "Full custom lyrics", "Professional mastering", "High quality audio", "4 revisions included", "$20 per additional revision", "Own the rights for +$150"]
-  }, {
-    name: "Brand/School Anthem",
-    price: "$600+",
-    description: "Commercial-ready production",
-    features: ["Full-length song", "Commercial license included", "Multiple format deliveries", "Unlimited revisions", "Priority support", "Source files included"]
-  }];
-  return <section className="relative bg-primary py-12 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-background/20 rounded-full blur-3xl animate-pulse delay-1000" />
+  return (
+    <section className="relative overflow-hidden">
+      {/* Hero Banner Image */}
+      <div className="w-full">
+        <img 
+          src={heroBanner} 
+          alt="KantaCanta - Custom Music Creation" 
+          className="w-full h-auto object-cover"
+        />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          {/* Logo with decorative headphones */}
-          <div className="flex justify-center mb-8 relative">
-            {/* Animated decorative headphones - left */}
-            <img 
-              src={headphonesDecoration} 
-              alt="" 
-              className="absolute left-0 top-1/4 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0"
-            />
-            
-            {/* Main logo */}
+      {/* Logo overlay */}
+      <div className="bg-primary py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center">
             <img 
               src={logo} 
               alt="KantaCanta - Your Story. Your Song. Your Vibe." 
-              className="w-full max-w-5xl h-auto mix-blend-multiply relative z-10" 
-            />
-            
-            {/* Animated decorative headphones - right */}
-            <img 
-              src={headphonesDecoration} 
-              alt="" 
-              className="absolute right-0 top-1/4 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0 scale-x-[-1]"
+              className="w-full max-w-5xl h-auto mix-blend-multiply" 
             />
           </div>
-
-      {/* Music Artwork */}
-      <div className="flex justify-center mb-12">
-        
-      </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Hero;
