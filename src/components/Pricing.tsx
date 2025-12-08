@@ -21,6 +21,8 @@ const pricingTiers = [
   {
     name: "Personal Songs",
     price: "$150",
+    originalPrice: "$250",
+    introductory: true,
     description: "Wedding, proposal, birthday songs",
     features: [
       "1-2 minutes",
@@ -57,7 +59,8 @@ const pricingTiers = [
       "Unlimited revisions",
       "Priority support",
       "Source files included"
-    ]
+    ],
+    blueButton: true
   }
 ];
 
@@ -130,7 +133,9 @@ const Pricing = () => {
                   className={`w-full ${
                     tier.popular
                       ? "bg-secondary hover:bg-secondary/90 text-background shadow-lg"
-                      : "bg-primary hover:bg-primary/90 text-background"
+                      : tier.blueButton
+                        ? "bg-blue-600 hover:bg-blue-700 text-white"
+                        : "bg-primary hover:bg-primary/90 text-background"
                   }`}
                   onClick={scrollToForm}
                 >
