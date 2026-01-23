@@ -113,9 +113,9 @@ const OrderForm = () => {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Full Name</FormLabel>
+                        <FormLabel className="text-white">Full Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} />
+                          <Input placeholder="John Doe" className="bg-white/10 border-white/30 text-white placeholder:text-gray-400" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -128,9 +128,9 @@ const OrderForm = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel className="text-white">Email</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="john@example.com" {...field} />
+                            <Input type="email" placeholder="john@example.com" className="bg-white/10 border-white/30 text-white placeholder:text-gray-400" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -142,9 +142,9 @@ const OrderForm = () => {
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Phone Number</FormLabel>
+                          <FormLabel className="text-white">Phone Number</FormLabel>
                           <FormControl>
-                            <Input type="tel" placeholder="+1 (555) 000-0000" {...field} />
+                            <Input type="tel" placeholder="+1 (555) 000-0000" className="bg-white/10 border-white/30 text-white placeholder:text-gray-400" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -154,7 +154,7 @@ const OrderForm = () => {
                 </div>
 
                 {/* Song Details */}
-                <div className="space-y-4 pt-6 border-t border-border">
+                <div className="space-y-4 pt-6 border-t border-white/20">
                   <h3 className="text-xl font-semibold text-white">
                     Song Details
                   </h3>
@@ -164,10 +164,10 @@ const OrderForm = () => {
                     name="tier"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Select Your Package</FormLabel>
+                        <FormLabel className="text-white">Select Your Package</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger className="bg-white/10 border-white/30 text-white">
                               <SelectValue placeholder="Choose a pricing tier" />
                             </SelectTrigger>
                           </FormControl>
@@ -187,10 +187,10 @@ const OrderForm = () => {
                     name="songType"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Song Type</FormLabel>
+                        <FormLabel className="text-white">Song Type</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger className="bg-white/10 border-white/30 text-white">
                               <SelectValue placeholder="What's the occasion?" />
                             </SelectTrigger>
                           </FormControl>
@@ -213,11 +213,11 @@ const OrderForm = () => {
                     name="occasion"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Describe the Occasion</FormLabel>
+                        <FormLabel className="text-white">Describe the Occasion</FormLabel>
                         <FormControl>
                           <Textarea
                             placeholder="Tell us about the special moment this song is for..."
-                            className="min-h-[100px]"
+                            className="min-h-[100px] bg-white/10 border-white/30 text-white placeholder:text-gray-400"
                             {...field}
                           />
                         </FormControl>
@@ -227,16 +227,16 @@ const OrderForm = () => {
                   />
 
                   <FormItem>
-                    <FormLabel>Upload Reference Song (Optional)</FormLabel>
+                    <FormLabel className="text-white">Upload Reference Song (Optional)</FormLabel>
                     <FormControl>
                       <Input
                         type="file"
                         accept="audio/*"
                         onChange={handleAudioChange}
-                        className="cursor-pointer"
+                        className="cursor-pointer bg-white/10 border-white/30 text-white file:text-white"
                       />
                     </FormControl>
-                    <FormDescription>
+                    <FormDescription className="text-gray-400">
                       Upload a song that matches the style you want (MP3, WAV, M4A - Max 10MB)
                     </FormDescription>
                     {audioFile && (
@@ -251,15 +251,15 @@ const OrderForm = () => {
                     name="referenceStyle"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Musical Style Preferences</FormLabel>
+                        <FormLabel className="text-white">Musical Style Preferences</FormLabel>
                         <FormControl>
                           <Textarea
                             placeholder="e.g., Hip-hop with energetic beats, Pop ballad, Country rock..."
-                            className="min-h-[80px]"
+                            className="min-h-[80px] bg-white/10 border-white/30 text-white placeholder:text-gray-400"
                             {...field}
                           />
                         </FormControl>
-                        <FormDescription>
+                        <FormDescription className="text-gray-400">
                           Describe the style, genre, or artists you'd like us to reference
                         </FormDescription>
                         <FormMessage />
@@ -272,15 +272,15 @@ const OrderForm = () => {
                     name="customLyrics"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Your Custom Lyrics (Optional)</FormLabel>
+                        <FormLabel className="text-white">Your Custom Lyrics (Optional)</FormLabel>
                         <FormControl>
                           <Textarea
                             placeholder="Paste your lyrics here if you've written them..."
-                            className="min-h-[150px] font-mono"
+                            className="min-h-[150px] font-mono bg-white/10 border-white/30 text-white placeholder:text-gray-400"
                             {...field}
                           />
                         </FormControl>
-                        <FormDescription>
+                        <FormDescription className="text-gray-400">
                           Leave blank if you'd like us to write the lyrics for you
                         </FormDescription>
                         <FormMessage />
@@ -293,15 +293,15 @@ const OrderForm = () => {
                     name="specialDetails"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Special Details to Include</FormLabel>
+                        <FormLabel className="text-white">Special Details to Include</FormLabel>
                         <FormControl>
                           <Textarea
                             placeholder="Names to mention, inside jokes, specific moments to reference..."
-                            className="min-h-[100px]"
+                            className="min-h-[100px] bg-white/10 border-white/30 text-white placeholder:text-gray-400"
                             {...field}
                           />
                         </FormControl>
-                        <FormDescription>
+                        <FormDescription className="text-gray-400">
                           Any specific details you want incorporated into the song
                         </FormDescription>
                         <FormMessage />
@@ -318,7 +318,7 @@ const OrderForm = () => {
                   >
                     Submit for Quote
                   </Button>
-                  <p className="text-sm text-muted-foreground text-center mt-4">
+                  <p className="text-sm text-gray-400 text-center mt-4">
                     We'll contact you to discuss further within 24 hours
                   </p>
                 </div>
