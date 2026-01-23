@@ -25,13 +25,13 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 bg-background">
+    <section id="how-it-works" className="py-20 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             How It Works
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Four simple steps to your perfect personalized song
           </p>
         </div>
@@ -44,7 +44,7 @@ const HowItWorks = () => {
                 key={index}
                 className="relative group"
               >
-                <div className="bg-card border border-border rounded-2xl p-6 h-full shadow-soft hover:shadow-glow transition-smooth">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 h-full shadow-soft hover:shadow-glow transition-smooth">
                   <div className="flex flex-col items-center text-center space-y-4">
                     <div className="w-16 h-16 rounded-2xl bg-gradient-warm flex items-center justify-center shadow-glow">
                       <Icon className="w-8 h-8 text-white" />
@@ -53,10 +53,10 @@ const HowItWorks = () => {
                       <div className="text-sm font-semibold text-primary">
                         Step {index + 1}
                       </div>
-                      <h3 className="text-xl font-bold text-card-foreground">
+                      <h3 className="text-xl font-bold text-white">
                         {step.title}
                       </h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-gray-300">
                         {step.description}
                       </p>
                     </div>

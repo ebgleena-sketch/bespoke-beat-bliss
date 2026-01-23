@@ -49,13 +49,13 @@ const SampleSongs = () => {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Sample Songs
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Listen to examples of our custom songs
           </p>
         </div>
@@ -64,7 +64,7 @@ const SampleSongs = () => {
           {sampleSongs.map((song, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
             >
               <audio
                 ref={(el) => (audioRefs.current[index] = el)}
@@ -83,8 +83,8 @@ const SampleSongs = () => {
                   )}
                 </button>
                 <div className="text-center">
-                  <h3 className="text-lg font-bold text-foreground">{song.title}</h3>
-                  <p className="text-sm text-muted-foreground">{song.description}</p>
+                  <h3 className="text-lg font-bold text-white">{song.title}</h3>
+                  <p className="text-sm text-gray-300">{song.description}</p>
                 </div>
               </div>
             </div>
