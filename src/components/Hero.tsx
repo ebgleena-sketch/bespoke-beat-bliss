@@ -1,75 +1,87 @@
-import { Music, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/kantacanta-logo.png";
-import musicArtwork from "@/assets/music-artwork.jpg";
-import headphonesDecoration from "@/assets/headphones-decoration.png";
+
 const Hero = () => {
   const scrollToForm = () => {
     document.getElementById("order-form")?.scrollIntoView({
       behavior: "smooth"
     });
   };
-  const pricingTiers = [{
-    name: "Walk-Up Song",
-    price: "$150",
-    description: "Quick, powerful entrance music",
-    features: ["30-60 seconds", "Lyrics provided", "AI-generated vocals", "High quality audio", "2 revisions included", "$20 per additional revision"]
-  }, {
-    name: "Personal Songs",
-    price: "$250",
-    description: "Wedding, proposal, birthday songs",
-    features: ["1-2 minutes", "Full custom lyrics", "AI-generated vocals", "3-4 custom details", "High quality audio", "2 revisions for free", "$20 per additional revision"],
-    popular: true
-  }, {
-    name: "Premium Song",
-    price: "$385",
-    description: "For truly unforgettable moments",
-    features: ["2-3 minutes", "Full custom lyrics", "Professional mastering", "High quality audio", "4 revisions included", "$20 per additional revision", "Own the rights for +$150"]
-  }, {
-    name: "Brand/School Anthem",
-    price: "$600+",
-    description: "Commercial-ready production",
-    features: ["Full-length song", "Commercial license included", "Multiple format deliveries", "Unlimited revisions", "Priority support", "Source files included"]
-  }];
-  return <section className="relative bg-primary py-12 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-background/20 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          {/* Logo with decorative headphones */}
-          <div className="flex justify-center mb-8 relative">
-            {/* Animated decorative headphones - left */}
-            <img 
-              src={headphonesDecoration} 
-              alt="" 
-              className="absolute left-0 top-1/4 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0"
-            />
-            
-            {/* Main logo */}
-            <img 
-              src={logo} 
-              alt="KantaCanta - Your Story. Your Song. Your Vibe." 
-              className="w-full max-w-5xl h-auto mix-blend-multiply relative z-10" 
-            />
-            
-            {/* Animated decorative headphones - right */}
-            <img 
-              src={headphonesDecoration} 
-              alt="" 
-              className="absolute right-0 top-1/4 -translate-y-1/2 w-32 md:w-48 lg:w-64 animate-pulse hover-scale z-0 scale-x-[-1]"
-            />
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth"
+    });
+  };
+
+  return (
+    <section className="relative min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-8 overflow-hidden">
+      {/* Navigation */}
+      <nav className="container mx-auto px-4 mb-12">
+        <div className="flex items-center justify-center gap-8 relative">
+          <div className="flex items-center gap-2">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="px-6 py-2 rounded-full bg-white/10 text-white font-medium hover:bg-white/20 transition-all"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => scrollToSection('pricing')}
+              className="px-6 py-2 text-gray-300 font-medium hover:text-white transition-all"
+            >
+              Services
+            </button>
+            <button 
+              onClick={() => scrollToSection('how-it-works')}
+              className="px-6 py-2 text-gray-300 font-medium hover:text-white transition-all"
+            >
+              Testimonials
+            </button>
+            <button 
+              onClick={() => scrollToSection('order-form')}
+              className="px-6 py-2 text-gray-300 font-medium hover:text-white transition-all"
+            >
+              Contact
+            </button>
+          </div>
+          
+          {/* Get Started Button */}
+          <Button 
+            onClick={scrollToForm}
+            className="absolute right-0 px-8 py-6 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-400 text-white font-semibold text-lg hover:opacity-90 transition-all hover:scale-105"
+          >
+            Get Started
+          </Button>
+        </div>
+      </nav>
+
+      {/* Main Content - Red Card with Logo */}
+      <div className="container mx-auto px-4 flex justify-center items-center">
+        <div className="bg-primary rounded-3xl p-12 md:p-16 lg:p-20 max-w-3xl w-full shadow-2xl">
+          {/* Icon - Blue squares and circles */}
+          <div className="flex justify-center mb-8">
+            <div className="grid grid-cols-2 gap-2">
+              <div className="w-12 h-12 bg-secondary rounded-sm"></div>
+              <div className="w-12 h-12 bg-secondary rounded-sm"></div>
+              <div className="w-10 h-10 bg-secondary rounded-full mx-auto"></div>
+              <div className="w-10 h-10 bg-secondary rounded-full mx-auto"></div>
+            </div>
           </div>
 
-      {/* Music Artwork */}
-      <div className="flex justify-center mb-12">
-        
-      </div>
+          {/* Logo Text */}
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary text-center mb-6 font-serif italic">
+            KantaCanta
+          </h1>
+
+          {/* Tagline */}
+          <p className="text-secondary text-center text-lg md:text-xl tracking-widest font-medium">
+            YOUR STORY. YOUR SONG. YOUR VIBE.
+          </p>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
