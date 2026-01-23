@@ -16,9 +16,9 @@ const Index = () => {
       <OrderForm />
       
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-8">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2024 Custom Songs. Making every moment unforgettable.</p>
+      <footer className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] border-t border-white/10 py-8">
+        <div className="container mx-auto px-4 text-center text-gray-300">
+          <p>© 2024 KantaCanta. Making every moment unforgettable.</p>
         </div>
       </footer>
     </main>

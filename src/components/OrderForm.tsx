@@ -84,27 +84,27 @@ const OrderForm = () => {
   };
 
   return (
-    <section id="order-form" className="py-20 bg-background">
+    <section id="order-form" className="py-20 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-warm mb-6 shadow-glow">
               <Music className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Start Your Custom Song
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-gray-300">
               Fill out the details below and we'll create your perfect song
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-soft">
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-soft">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 {/* Personal Information */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-card-foreground">
+                  <h3 className="text-xl font-semibold text-white">
                     Contact Information
                   </h3>
                   
@@ -155,7 +155,7 @@ const OrderForm = () => {
 
                 {/* Song Details */}
                 <div className="space-y-4 pt-6 border-t border-border">
-                  <h3 className="text-xl font-semibold text-card-foreground">
+                  <h3 className="text-xl font-semibold text-white">
                     Song Details
                   </h3>
 
