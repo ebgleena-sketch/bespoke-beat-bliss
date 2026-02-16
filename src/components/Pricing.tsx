@@ -30,7 +30,7 @@ const pricingTiers = [
       "AI-generated vocals",
       "3-4 custom details",
       "High quality audio",
-      "2 revisions for free",
+      "2 revisions included",
       "$20 per additional revision"
     ],
     popular: true
