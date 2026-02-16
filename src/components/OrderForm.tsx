@@ -321,6 +321,52 @@ const OrderForm = () => {
                   <p className="text-sm text-gray-400 text-center mt-4">
                     We'll contact you to discuss further within 24 hours
                   </p>
+                  <p className="text-sm text-gray-300 text-center mt-2">
+                    Questions? Fill out our quick contact form below.
+                  </p>
+                </div>
+
+                {/* Quick Contact Section */}
+                <div className="mt-10 pt-8 border-t border-white/20 space-y-4">
+                  <h3 className="text-xl font-semibold text-white text-center">
+                    Have a Question? Contact Us
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm text-white mb-1 block">Your Name</label>
+                      <Input
+                        placeholder="Your name"
+                        className="bg-white/10 border-white/30 text-white placeholder:text-gray-400"
+                        id="contact-name"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm text-white mb-1 block">Your Email</label>
+                      <Input
+                        type="email"
+                        placeholder="you@example.com"
+                        className="bg-white/10 border-white/30 text-white placeholder:text-gray-400"
+                        id="contact-email"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm text-white mb-1 block">Your Question</label>
+                    <Textarea
+                      placeholder="Type your question here..."
+                      className="min-h-[100px] bg-white/10 border-white/30 text-white placeholder:text-gray-400"
+                      id="contact-question"
+                    />
+                  </div>
+                  <Button
+                    type="button"
+                    onClick={() => {
+                      toast.success("Your question has been submitted! We'll get back to you soon.");
+                    }}
+                    className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-400 text-white font-semibold hover:opacity-90 py-5"
+                  >
+                    Submit Question
+                  </Button>
                 </div>
               </form>
             </Form>

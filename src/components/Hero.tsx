@@ -18,8 +18,8 @@ const Hero = () => {
     <section className="relative min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] py-8 overflow-hidden">
       {/* Navigation */}
       <nav className="container mx-auto px-4 mb-12">
-        <div className="flex items-center justify-center gap-8 relative">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+          <div className="flex items-center gap-2 flex-wrap justify-center">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="px-6 py-2 rounded-full bg-white/10 text-white font-medium hover:bg-white/20 transition-all"
@@ -49,7 +49,7 @@ const Hero = () => {
           {/* Get Started Button */}
           <Button 
             onClick={scrollToForm}
-            className="absolute right-0 px-8 py-6 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-400 text-white font-semibold text-lg hover:opacity-90 transition-all hover:scale-105"
+            className="px-8 py-6 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-400 text-white font-semibold text-lg hover:opacity-90 transition-all hover:scale-105"
           >
             Get Started
           </Button>
@@ -70,7 +70,7 @@ const Hero = () => {
           </div>
 
           {/* Logo Text */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary text-center mb-6 font-serif italic">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-6 font-serif italic">
             KantaCanta
           </h1>
 
