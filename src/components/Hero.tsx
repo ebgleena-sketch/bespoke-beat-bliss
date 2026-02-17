@@ -75,7 +75,7 @@ const Hero = () => {
           </h1>
 
           {/* Tagline */}
-          <p className="text-center text-lg md:text-xl tracking-widest font-medium bg-gradient-warm bg-clip-text text-transparent">
+          <p className="text-secondary/80 text-center text-lg md:text-xl tracking-widest font-medium">
             YOUR STORY. YOUR SONG. YOUR VIBE.
           </p>
         </div>
