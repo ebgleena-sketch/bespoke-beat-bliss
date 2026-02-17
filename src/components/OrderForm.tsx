@@ -363,7 +363,7 @@ const OrderForm = () => {
                     onClick={() => {
                       toast.success("Your question has been submitted! We'll get back to you soon.");
                     }}
-                    className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-400 text-white font-semibold hover:opacity-90 py-5"
+                    className="w-full bg-gradient-warm text-white font-semibold hover:opacity-90 py-5 shadow-glow"
                   >
                     Submit Question
                   </Button>

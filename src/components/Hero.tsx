@@ -49,7 +49,7 @@ const Hero = () => {
           {/* Get Started Button */}
           <Button 
             onClick={scrollToForm}
-            className="px-8 py-6 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-400 text-white font-semibold text-lg hover:opacity-90 transition-all hover:scale-105"
+            className="px-8 py-6 rounded-full bg-gradient-warm text-white font-semibold text-lg hover:opacity-90 transition-all hover:scale-105 shadow-glow"
           >
             Get Started
           </Button>
@@ -75,7 +75,7 @@ const Hero = () => {
           </h1>
 
           {/* Tagline */}
-          <p className="text-secondary text-center text-lg md:text-xl tracking-widest font-medium">
+          <p className="text-center text-lg md:text-xl tracking-widest font-medium bg-gradient-warm bg-clip-text text-transparent">
             YOUR STORY. YOUR SONG. YOUR VIBE.
           </p>
         </div>
