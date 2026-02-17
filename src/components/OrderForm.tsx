@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Music } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -75,12 +76,51 @@ const OrderForm = () => {
     }
   };
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Form data:", data);
-    console.log("Audio file:", audioFile);
-    toast.success("Quote submitted! We'll contact you to discuss further within 24 hours.");
-    form.reset();
-    setAudioFile(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
+
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke('send-email', {
+        body: { type: 'quote', data },
+      });
+      if (error) throw error;
+      toast.success("Quote submitted! We'll contact you within 24 hours.");
+      form.reset();
+      setAudioFile(null);
+    } catch (err) {
+      console.error(err);
+      toast.error("Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleContactSubmit = async () => {
+    const name = (document.getElementById('contact-name') as HTMLInputElement)?.value;
+    const email = (document.getElementById('contact-email') as HTMLInputElement)?.value;
+    const question = (document.getElementById('contact-question') as HTMLTextAreaElement)?.value;
+    if (!name || !email || !question) {
+      toast.error("Please fill in all contact fields.");
+      return;
+    }
+    setIsContactSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke('send-email', {
+        body: { type: 'contact', data: { name, email, question } },
+      });
+      if (error) throw error;
+      toast.success("Your question has been submitted! We'll get back to you soon.");
+      (document.getElementById('contact-name') as HTMLInputElement).value = '';
+      (document.getElementById('contact-email') as HTMLInputElement).value = '';
+      (document.getElementById('contact-question') as HTMLTextAreaElement).value = '';
+    } catch (err) {
+      console.error(err);
+      toast.error("Failed to submit. Please try again.");
+    } finally {
+      setIsContactSubmitting(false);
+    }
   };
 
   return (
@@ -314,9 +354,10 @@ const OrderForm = () => {
                   <Button
                     type="submit"
                     size="lg"
+                    disabled={isSubmitting}
                     className="w-full bg-gradient-warm hover:opacity-90 shadow-glow text-lg py-6"
                   >
-                    Submit for Quote
+                    {isSubmitting ? "Submitting..." : "Submit for Quote"}
                   </Button>
                   <p className="text-sm text-gray-400 text-center mt-4">
                     We'll contact you to discuss further within 24 hours
@@ -360,12 +401,11 @@ const OrderForm = () => {
                   </div>
                   <Button
                     type="button"
-                    onClick={() => {
-                      toast.success("Your question has been submitted! We'll get back to you soon.");
-                    }}
+                    disabled={isContactSubmitting}
+                    onClick={handleContactSubmit}
                     className="w-full bg-gradient-warm text-white font-semibold hover:opacity-90 py-5 shadow-glow"
                   >
-                    Submit Question
+                    {isContactSubmitting ? "Submitting..." : "Submit Question"}
                   </Button>
                 </div>
               </form>
