@@ -17,8 +17,13 @@ const Index = () => {
       
       {/* Footer */}
       <footer className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] border-t border-white/10 py-8">
-        <div className="container mx-auto px-4 text-center text-gray-300">
+        <div className="container mx-auto px-4 text-center text-gray-300 space-y-2">
           <p>© 2024 KantaCanta. Making every moment unforgettable.</p>
+          <p>
+            <a href="mailto:contact@kantacanta.com" className="text-secondary hover:underline">
+              contact@kantacanta.com
+            </a>
+          </p>
         </div>
       </footer>
     </main>

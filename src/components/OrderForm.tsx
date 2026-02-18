@@ -211,11 +211,11 @@ const OrderForm = () => {
                               <SelectValue placeholder="Choose a pricing tier" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
-                            <SelectItem value="personal">Personal Song ($100–$250)</SelectItem>
-                            <SelectItem value="premium">Premium Song ($300–$600)</SelectItem>
-                            <SelectItem value="anthem">Brand/School Anthem ($600–$1200)</SelectItem>
-                          </SelectContent>
+                           <SelectContent>
+                             <SelectItem value="walkup">Walk-Up Song ($99)</SelectItem>
+                             <SelectItem value="personal">Personal Songs ($150)</SelectItem>
+                             <SelectItem value="anthem">Professional Sonic Branding/Jingle ($600+)</SelectItem>
+                           </SelectContent>
                         </Select>
                         <FormMessage />
                       </FormItem>
@@ -357,7 +357,7 @@ const OrderForm = () => {
                     disabled={isSubmitting}
                     className="w-full bg-gradient-warm hover:opacity-90 shadow-glow text-lg py-6"
                   >
-                    {isSubmitting ? "Submitting..." : "Submit for Quote"}
+                    {isSubmitting ? "Processing..." : "Place Order"}
                   </Button>
                   <p className="text-sm text-gray-400 text-center mt-4">
                     We'll contact you to discuss further within 24 hours
