@@ -36,27 +36,14 @@ const pricingTiers = [
     popular: true
   },
   {
-    name: "Premium Song",
-    price: "$385",
-    description: "For truly unforgettable moments",
-    features: [
-      "2-3 minutes",
-      "Full custom lyrics",
-      "Professional mastering",
-      "High quality audio",
-      "4 revisions included",
-      "$20 per additional revision"
-    ]
-  },
-  {
-    name: "Brand/School Anthem",
+    name: "Professional Sonic Branding/Jingle",
     price: "$600+",
     description: "Commercial-ready production",
     features: [
       "Full-length song",
       "Commercial license included",
       "Multiple format deliveries",
-      "Unlimited revisions",
+      "20 revisions",
       "Priority support",
       "Source files included"
     ],
