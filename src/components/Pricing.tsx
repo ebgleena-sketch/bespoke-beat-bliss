@@ -76,11 +76,6 @@ const Pricing = () => {
                 tier.popular ? "border-secondary scale-105" : "border-background/20"
               }`}
             >
-              {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-secondary rounded-full shadow-lg">
-                  <span className="text-sm font-semibold text-background">Most Popular</span>
-                </div>
-              )}
 
               <div className="space-y-4">
                 <div>
