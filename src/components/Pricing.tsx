@@ -72,58 +72,51 @@ const Pricing = () => {
           {pricingTiers.map((tier, index) => (
             <div
               key={index}
-              className={`relative bg-background border-2 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-smooth ${
-                tier.popular ? "border-secondary scale-105" : "border-background/20"
-              }`}
+              className="relative bg-background border-2 border-background/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-smooth flex flex-col"
             >
-
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-primary mb-2">
-                    {tier.name}
-                  </h3>
-                  <p className="text-foreground/70 text-sm mb-3">
-                    {tier.description}
-                  </p>
-                  <div className="flex items-center gap-2">
-                    {tier.originalPrice && (
-                      <span className="text-lg text-muted-foreground line-through">
-                        {tier.originalPrice}
-                      </span>
-                    )}
-                    <span className="text-3xl font-bold text-secondary">
-                      {tier.price}
-                    </span>
-                  </div>
-                  {tier.introductory && (
-                    <span className="text-xs text-secondary font-semibold">
-                      Introductory Price
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-primary mb-2">
+                  {tier.name}
+                </h3>
+                <p className="text-foreground/70 text-sm mb-3">
+                  {tier.description}
+                </p>
+                <div className="flex items-center gap-2">
+                  {tier.originalPrice && (
+                    <span className="text-lg text-muted-foreground line-through">
+                      {tier.originalPrice}
                     </span>
                   )}
+                  <span className="text-3xl font-bold text-secondary">
+                    {tier.price}
+                  </span>
                 </div>
-
-                <ul className="space-y-2">
-                  {tier.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  className={`w-full ${
-                    tier.popular
-                      ? "bg-secondary hover:bg-secondary/90 text-background shadow-lg"
-                      : tier.blueButton
-                        ? "bg-blue-600 hover:bg-blue-700 text-white"
-                        : "bg-primary hover:bg-primary/90 text-background"
-                  }`}
-                  onClick={scrollToForm}
-                >
-                  Get Started
-                </Button>
+                {tier.introductory && (
+                  <span className="text-xs text-secondary font-semibold">
+                    Introductory Price
+                  </span>
+                )}
               </div>
+
+              <ul className="space-y-2 flex-1">
+                {tier.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                className={`w-full mt-6 ${
+                  tier.blueButton
+                    ? "bg-blue-600 hover:bg-blue-700 text-white"
+                    : "bg-primary hover:bg-primary/90 text-background"
+                }`}
+                onClick={scrollToForm}
+              >
+                Get Started
+              </Button>
             </div>
           ))}
         </div>
