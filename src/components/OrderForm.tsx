@@ -82,16 +82,35 @@ const OrderForm = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.functions.invoke('send-email', {
+      // Send email notification
+      await supabase.functions.invoke('send-email', {
         body: { type: 'quote', data },
       });
-      if (error) throw error;
-      toast.success("Quote submitted! We'll contact you within 24 hours.");
-      form.reset();
-      setAudioFile(null);
+
+      // Create Stripe checkout session
+      const { data: checkoutData, error: checkoutError } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          tier: data.tier,
+          name: data.name,
+          email: data.email,
+          formData: {
+            phone: data.phone,
+            songType: data.songType,
+            occasion: data.occasion,
+            referenceStyle: data.referenceStyle,
+          },
+        },
+      });
+
+      if (checkoutError) throw checkoutError;
+      if (checkoutData?.url) {
+        window.location.href = checkoutData.url;
+      } else {
+        throw new Error('No checkout URL returned');
+      }
     } catch (err) {
       console.error(err);
-      toast.error("Failed to submit. Please try again.");
+      toast.error("Failed to process order. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
