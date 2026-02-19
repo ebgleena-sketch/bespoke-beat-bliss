@@ -108,11 +108,7 @@ const Pricing = () => {
               </ul>
 
               <Button
-                className={`w-full mt-6 ${
-                  tier.blueButton
-                    ? "bg-blue-600 hover:bg-blue-700 text-white"
-                    : "bg-primary hover:bg-primary/90 text-background"
-                }`}
+                className="w-full mt-6 bg-primary hover:bg-primary/90 text-background"
                 onClick={scrollToForm}
               >
                 Get Started
