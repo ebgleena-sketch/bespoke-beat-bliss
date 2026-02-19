@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { toast } from "sonner";
 import Hero from "@/components/Hero";
 import Occasions from "@/components/Occasions";
 import HowItWorks from "@/components/HowItWorks";
@@ -6,6 +9,17 @@ import Pricing from "@/components/Pricing";
 import OrderForm from "@/components/OrderForm";
 
 const Index = () => {
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const payment = searchParams.get("payment");
+    if (payment === "success") {
+      toast.success("🎵 Payment successful! We'll be in touch within 24 hours to start your song.");
+    } else if (payment === "cancelled") {
+      toast.info("Order cancelled. Feel free to place your order whenever you're ready.");
+    }
+  }, [searchParams]);
+
   return (
     <main className="min-h-screen">
       <Hero />
