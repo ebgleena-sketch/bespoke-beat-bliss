@@ -27,7 +27,7 @@ const Hero = () => {
               Home
             </button>
             <button 
-              onClick={() => scrollToSection('pricing')}
+              onClick={() => scrollToSection('occasions')}
               className="px-6 py-2 text-gray-300 font-medium hover:text-white transition-all"
             >
               Services
@@ -36,7 +36,7 @@ const Hero = () => {
               onClick={() => scrollToSection('how-it-works')}
               className="px-6 py-2 text-gray-300 font-medium hover:text-white transition-all"
             >
-              Testimonials
+              How It Works
             </button>
             <button 
               onClick={() => scrollToSection('order-form')}
