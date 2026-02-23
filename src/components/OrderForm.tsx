@@ -87,8 +87,18 @@ const OrderForm = () => {
         body: { type: 'quote', data },
       });
 
-      // Redirect to Stripe payment link
-      window.open("https://buy.stripe.com/00w5kDbxYcMxcwfcUNdjO01", "_blank");
+      // Redirect to tier-specific Stripe payment link
+      const tierLinks: Record<string, string> = {
+        walkup: "https://buy.stripe.com/eVqbJ1fOe8wh7bVbQJdjO00",
+        personal: "https://buy.stripe.com/cNifZh7hI5k58fZ4ohdjO02",
+        anthem: "https://buy.stripe.com/bJe14ngSi7sdcwf5sldjO03",
+      };
+      const paymentUrl = tierLinks[data.tier];
+      if (!paymentUrl) {
+        toast.error("Invalid package selected.");
+        return;
+      }
+      window.open(paymentUrl, "_blank");
       toast.success("Redirecting to payment. If a new tab didn't open, please check your popup blocker.");
     } catch (err) {
       console.error(err);
@@ -241,6 +251,7 @@ const OrderForm = () => {
                             <SelectItem value="proposal">Proposal Song</SelectItem>
                             <SelectItem value="birthday">Birthday Song</SelectItem>
                             <SelectItem value="anthem">Brand/School Anthem</SelectItem>
+                            <SelectItem value="jingle">Professional Jingle/Song</SelectItem>
                             <SelectItem value="other">Other</SelectItem>
                           </SelectContent>
                         </Select>
