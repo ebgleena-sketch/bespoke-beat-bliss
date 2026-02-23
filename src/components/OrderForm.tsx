@@ -88,7 +88,8 @@ const OrderForm = () => {
       });
 
       // Redirect to Stripe payment link
-      window.location.href = "https://buy.stripe.com/00w5kDbxYcMxcwfcUNdjO01";
+      window.open("https://buy.stripe.com/00w5kDbxYcMxcwfcUNdjO01", "_blank");
+      toast.success("Redirecting to payment. If a new tab didn't open, please check your popup blocker.");
     } catch (err) {
       console.error(err);
       toast.error("Failed to process order. Please try again.");
