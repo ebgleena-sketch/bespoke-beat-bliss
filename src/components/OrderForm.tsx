@@ -87,27 +87,8 @@ const OrderForm = () => {
         body: { type: 'quote', data },
       });
 
-      // Create Stripe checkout session
-      const { data: checkoutData, error: checkoutError } = await supabase.functions.invoke('create-checkout', {
-        body: {
-          tier: data.tier,
-          name: data.name,
-          email: data.email,
-          formData: {
-            phone: data.phone,
-            songType: data.songType,
-            occasion: data.occasion,
-            referenceStyle: data.referenceStyle,
-          },
-        },
-      });
-
-      if (checkoutError) throw checkoutError;
-      if (checkoutData?.url) {
-        window.location.href = checkoutData.url;
-      } else {
-        throw new Error('No checkout URL returned');
-      }
+      // Redirect to Stripe payment link
+      window.location.href = "https://buy.stripe.com/00w5kDbxYcMxcwfcUNdjO01";
     } catch (err) {
       console.error(err);
       toast.error("Failed to process order. Please try again.");
