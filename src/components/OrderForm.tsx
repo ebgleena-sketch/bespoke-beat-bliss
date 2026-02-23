@@ -380,7 +380,7 @@ const OrderForm = () => {
                 </div>
 
                 {/* Quick Contact Section */}
-                <div className="mt-10 pt-8 border-t border-white/20 space-y-4">
+                <div id="contact-section" className="mt-10 pt-8 border-t border-white/20 space-y-4">
                   <h3 className="text-xl font-semibold text-white text-center">
                     Have a Question? Contact Us
                   </h3>

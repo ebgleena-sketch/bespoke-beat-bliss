@@ -39,7 +39,7 @@ const Hero = () => {
               How It Works
             </button>
             <button 
-              onClick={() => scrollToSection('order-form')}
+              onClick={() => scrollToSection('contact-section')}
               className="px-6 py-2 text-gray-300 font-medium hover:text-white transition-all"
             >
               Contact
