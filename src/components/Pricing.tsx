@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 
@@ -117,10 +117,14 @@ const Pricing = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 space-y-4">
           <p className="text-lg text-white font-semibold">
             Extra $150 to own the rights to the song
           </p>
+          <div className="flex items-center justify-center gap-2 text-green-400">
+            <ShieldCheck className="w-5 h-5" />
+            <span className="text-sm font-medium">Secured payment via Stripe</span>
+          </div>
         </div>
       </div>
     </section>
